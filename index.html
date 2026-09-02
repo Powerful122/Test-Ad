@@ -1,70 +1,239 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <!-- Immediate redirect -->
-  <meta http-equiv="refresh" content="0; url=https://enkaare.com">
-  
-  <title>Our Test Ad</title>
-  
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      background: #f8f9fa;
-      font-family: -apple-system, BlinkMacOSystemFont, "Segoe UI", Roboto, sans-serif;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      min-height: 100vh;
-      color: #333;
-    }
-    h1 {
-      font-size: 2.8rem;
-      margin: 0.4em 0 0.2em;
-      text-align: center;
-    }
-    .tagline {
-      font-size: 1.5rem;
-      color: #555;
-      margin: 0 1rem 2rem;
-      text-align: center;
-    }
-    img {
-      max-width: 95vw;
-      max-height: 70vh;
-      object-fit: contain;
-      border-radius: 8px;
-      box-shadow: 0 8px 25px rgba(0,0,0,0.15);
-    }
-    .redirect-notice {
-      margin-top: 1.5rem;
-      font-size: 1rem;
-      color: #777;
-      text-align: center;
-    }
-    a {
-      color: #0066cc;
-      text-decoration: underline;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About | Powerful DeFi</title>
+    <meta name="description" content="Learn about Powerful, an independent publication exploring the protocols, liquidity, and systems shaping decentralized finance.">
+    <link rel="icon" href="../logo_with_black_BG-removebg-preview.png" type="image/png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        body { font-family: Inter, sans-serif; background: #fafafa; }
+        .glass { backdrop-filter: blur(18px); background: rgba(255,255,255,.75); }
+        .hero {
+            background: 
+                radial-gradient(circle at top right, #dbeafe 0%, transparent 35%),
+                radial-gradient(circle at bottom left, #f3f4f6 0%, transparent 40%);
+        }
+    </style>
 </head>
-<body>
 
-  <h1>Our Test Ad</h1>
-  <p class="tagline">Shop now</p>
-  
-  <img 
-    src="https://i.ibb.co/tw7CxL7C/image.png" 
-    alt="Advertisement preview image"
-  >
-  
-  <p class="redirect-notice">
-    Redirecting to <a href="https://enkaare.com">enkaare.com</a>...<br>
-    If you are not redirected automatically, click the link above.
-  </p>
+<body class="text-slate-900">
 
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 glass border-b border-gray-200">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex justify-between items-center h-20">
+                <a href="/" class="flex items-center gap-3">
+                    <img src="../logo_with_black_BG-removebg-preview.png" class="h-12">
+                    <div>
+                        <h1 class="text-2xl font-bold">Powerful</h1>
+                        <p class="uppercase tracking-[0.25em] text-xs text-gray-500">DeFi Research Publication</p>
+                    </div>
+                </a>
+                <div class="hidden md:flex items-center gap-8">
+                    <a href="/" class="text-gray-600 hover:text-black">Home</a>
+                    <a href="/publications/" class="text-gray-600 hover:text-black">Publications</a>
+                    <a href="/categories/" class="text-gray-600 hover:text-black">Categories</a>
+                    <a href="/about/" class="font-semibold">About</a>
+                    <a href="/contact/" class="text-gray-600 hover:text-black">Contact</a>
+                </div>
+                <a href="/newsletter/" class="hidden md:flex bg-black text-white px-5 py-3 rounded-lg font-semibold">Subscribe</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero pt-40 pb-24">
+        <div class="max-w-5xl mx-auto px-6">
+            <p class="uppercase tracking-[0.35em] text-sm text-gray-500 mb-6">About Powerful</p>
+            <h1 class="text-5xl md:text-7xl font-extrabold leading-tight">
+                Decoding <span class="block">the Protocols of</span> <span class="block text-blue-600">Future Finance</span>
+            </h1>
+            <p class="text-xl text-gray-600 mt-8 leading-9 max-w-3xl">
+                Powerful is an independent publication dedicated to researching decentralized protocols, digital liquidity, and the code-driven incentives rewriting the global financial system.
+                <br><br>
+                We look past the hype to investigate the actual systems and mathematics powering the DeFi revolution.
+            </p>
+        </div>
+    </section>
+
+    <!-- Mission Section -->
+    <section class="py-24 bg-white">
+        <div class="max-w-5xl mx-auto px-6">
+            <div class="mb-20">
+                <p class="uppercase tracking-[0.35em] text-sm text-gray-500 mb-4">Our Mission</p>
+                <h2 class="text-4xl md:text-5xl font-bold mb-8">To understand the code behind the capital.</h2>
+                <p class="text-lg text-gray-600 leading-9">
+                    Powerful exists to explore the decentralized forces that shape modern markets. We examine lending, liquidity, and tokenization through deep research, on-chain data, and critical analysis.
+                    <br><br>
+                    Our goal is simple: Help readers understand not only which tokens are moving—but the underlying technology that makes it possible.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories Section (What We Cover) -->
+    <section class="py-24 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <p class="uppercase tracking-[0.35em] text-sm text-gray-500">Research Areas</p>
+                <h2 class="text-4xl font-bold mt-4">DeFi Architecture</h2>
+                <p class="text-gray-600 mt-5 max-w-3xl mx-auto text-lg">
+                    We track the primary pillars of decentralized finance. Our research focuses on how these subsets interact to build a permissionless economy.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- 1. Lending & Borrowing -->
+                <div class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-md transition">
+                    <h3 class="font-bold text-xl mb-4">Lending & Borrowing</h3>
+                    <p class="text-gray-600 leading-7">Peer-to-peer liquidity pools that allow users to earn interest or access capital without traditional banks.</p>
+                </div>
+
+                <!-- 2. Staking -->
+                <div class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-md transition">
+                    <h3 class="font-bold text-xl mb-4">Staking</h3>
+                    <p class="text-gray-600 leading-7">Securing blockchain networks and earning protocol rewards by locking digital assets.</p>
+                </div>
+
+                <!-- 3. RWA -->
+                <div class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-md transition">
+                    <h3 class="font-bold text-xl mb-4">Tokenization & RWA</h3>
+                    <p class="text-gray-600 leading-7">Bringing Real World Assets like gold, real estate, and treasury bills onto the blockchain.</p>
+                </div>
+
+                <!-- 4. NFTs -->
+                <div class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-md transition">
+                    <h3 class="font-bold text-xl mb-4">NFTs</h3>
+                    <p class="text-gray-600 leading-7">Non-Fungible Tokens and the financialization of unique digital ownership and intellectual property.</p>
+                </div>
+
+                <!-- 5. DEXs -->
+                <div class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-md transition">
+                    <h3 class="font-bold text-xl mb-4">DEXs</h3>
+                    <p class="text-gray-600 leading-7">Decentralized Exchanges and automated market makers (AMMs) that enable permissionless trading.</p>
+                </div>
+
+                <!-- 6. Stablecoins -->
+                <div class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-md transition">
+                    <h3 class="font-bold text-xl mb-4">Stablecoins</h3>
+                    <p class="text-gray-600 leading-7">The backbone of DeFi: digital assets pegged to stable currencies like the US Dollar.</p>
+                </div>
+
+                <!-- 7. Yield Farming -->
+                <div class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-md transition">
+                    <h3 class="font-bold text-xl mb-4">Yield Farming</h3>
+                    <p class="text-gray-600 leading-7">Advanced strategies for optimizing returns by providing liquidity across various DeFi protocols.</p>
+                </div>
+
+                <!-- 8. Market Pulse -->
+                <div class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-md transition">
+                    <h3 class="font-bold text-xl mb-4">The Market Pulse</h3>
+                    <p class="text-gray-600 leading-7">Deep dives into spot prices, futures markets, and the latest trends in the crypto economy.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Editorial Principles -->
+    <section class="py-24 bg-white">
+        <div class="max-w-5xl mx-auto px-6">
+            <p class="uppercase tracking-[0.35em] text-sm text-gray-500 mb-4">Editorial Principles</p>
+            <h2 class="text-4xl font-bold mb-10">How We Analyze DeFi</h2>
+            <div class="grid md:grid-cols-2 gap-10">
+                <div>
+                    <h3 class="font-semibold text-xl mb-4">Protocol-First Analysis</h3>
+                    <p class="text-gray-600 leading-8">We examine the smart contracts and code on their own merits, questioning audits and protocol safety.</p>
+                </div>
+                <div>
+                    <h3 class="font-semibold text-xl mb-4">On-Chain Evidence</h3>
+                    <p class="text-gray-600 leading-8">We value hard data, liquidity flows, and wallet behavior over social media hype.</p>
+                </div>
+                <div>
+                    <h3 class="font-semibold text-xl mb-4">Risk Transparency</h3>
+                    <p class="text-gray-600 leading-8">DeFi is complex. We aim to explore the risks of smart contracts and market volatility fairly and thoughtfully.</p>
+                </div>
+                <div>
+                    <h3 class="font-semibold text-xl mb-4">Long-Term Vision</h3>
+                    <p class="text-gray-600 leading-8">Our work is designed to help build a permanent library of knowledge for the next generation of finance.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Looking Ahead -->
+    <section class="py-24 bg-gray-50">
+        <div class="max-w-5xl mx-auto px-6 text-center">
+            <p class="uppercase tracking-[0.35em] text-sm text-gray-500 mb-4">Looking Ahead</p>
+            <h2 class="text-4xl md:text-5xl font-bold mb-8">A Library of Decentralized Knowledge</h2>
+            <p class="text-lg text-gray-600 leading-9 max-w-3xl mx-auto">
+                Powerful is building more than a blog; we are building a research repository. Our ambition is to create a permanent library of analysis that helps users navigate the complex world of decentralized finance, from liquidity provision to protocol governance.
+            </p>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="py-24 bg-white">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <p class="uppercase tracking-[0.35em] text-sm text-gray-500 mb-4">Newsletter</p>
+            <h2 class="text-4xl md:text-5xl font-bold mb-6">Stay Ahead of the Curve</h2>
+            <p class="text-lg text-gray-600 max-w-2xl mx-auto leading-8 mb-10">Receive protocol deep-dives and market analysis directly in your inbox.</p>
+            <form class="flex flex-col md:flex-row gap-4 justify-center">
+                <input type="email" placeholder="Email address" class="flex-1 max-w-xl border border-gray-300 rounded-xl px-5 py-4 focus:outline-none focus:ring-2 focus:ring-black">
+                <button class="bg-black text-white px-8 py-4 rounded-xl font-semibold hover:bg-gray-800 transition">Subscribe</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black text-white py-20">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-12">
+                <div>
+                    <h3 class="text-3xl font-bold mb-4">Powerful</h3>
+                    <p class="text-gray-400 leading-7">Independent research and analysis exploring the systems of decentralized finance and the future of money.</p>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-5">Explore</h4>
+                    <ul class="space-y-3 text-gray-400">
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/about/">About</a></li>
+                        <li><a href="/publications/">Publications</a></li>
+                        <li><a href="/categories/">Categories</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-5">Research</h4>
+                    <ul class="space-y-3 text-gray-400">
+                        <li><a href="/lending/">Lending</a></li>
+                        <li><a href="/staking/">Staking</a></li>
+                        <li><a href="/rwa/">RWA</a></li>
+                        <li><a href="/dexs/">DEXs</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-5">Follow</h4>
+                    <ul class="space-y-3 text-gray-400">
+                        <li><a href="https://x.com/powerful_ng" target="_blank">X (Twitter)</a></li>
+                        <li><a href="/privacy/">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="border-gray-800 my-12">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-500">
+                <p>© 2026 Powerful DeFi. All rights reserved.</p>
+                <p>Decoding the future of finance.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>lucide.createIcons();</script>
 </body>
 </html>
