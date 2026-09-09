@@ -1,792 +1,414 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
-
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STUPID ($STUPID) — Financial Freedom (Probably Not)</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Permanent+Marker&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --bg-color: #0b0b0f;
+            --card-bg: #14141d;
+            --neon-pink: #ff007f;
+            --neon-yellow: #ccff00;
+            --neon-purple: #9d00ff;
+            --text-color: #ffffff;
+            --text-muted: #a0a0ab;
+        }
 
-<meta charset="UTF-8">
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: 'Space Grotesk', sans-serif;
+            overflow-x: hidden;
+        }
 
-<title>About | Powerful</title>
+        /* Header / Nav */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(11, 11, 15, 0.85);
+            backdrop-filter: blur(10px);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 5%;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
 
-<meta name="description"
-content="Learn about Powerful, an independent publication exploring DeFi, lending, borrowing, staking, tokenization, RWAs, NFTs, DEXs, stablecoins, yield farming, and market pulse.">
+        .logo {
+            font-family: 'Permanent Marker', cursive;
+            font-size: 1.8rem;
+            color: var(--neon-yellow);
+            text-shadow: 2px 2px var(--neon-pink);
+            letter-spacing: 1px;
+        }
 
-<link rel="icon"
-href="../logo_with_black_BG-removebg-preview.png"
-type="image/png">
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
 
-<script src="https://cdn.tailwindcss.com"></script>
+        .nav-links a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
 
-<script src="https://unpkg.com/lucide@latest"></script>
+        .nav-links a:hover {
+            color: var(--neon-yellow);
+        }
 
-<link rel="preconnect"
-href="https://fonts.googleapis.com">
+        .btn-buy-nav {
+            background: var(--neon-yellow);
+            color: #000;
+            padding: 10px 20px;
+            font-weight: 700;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
 
-<link rel="preconnect"
-href="https://fonts.gstatic.com"
-crossorigin>
+        .btn-buy-nav:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 15px var(--neon-yellow);
+        }
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
-rel="stylesheet">
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 150px 20px 80px;
+            background: radial-gradient(circle at center, #1b122c 0%, var(--bg-color) 70%);
+        }
 
-<style>
+        .hero h1 {
+            font-family: 'Permanent Marker', cursive;
+            font-size: clamp(3rem, 8vw, 6rem);
+            color: var(--neon-yellow);
+            text-shadow: 4px 4px var(--neon-pink);
+            margin-bottom: 10px;
+            transform: rotate(-2deg);
+        }
 
-body{
-font-family:Inter,sans-serif;
-background:#fafafa;
-}
+        .hero p.tagline {
+            font-size: clamp(1.2rem, 3vw, 1.8rem);
+            color: var(--neon-pink);
+            font-weight: 700;
+            margin-bottom: 25px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
 
-.glass{
-backdrop-filter:blur(18px);
-background:rgba(255,255,255,.75);
-}
+        .hero p.desc {
+            max-width: 600px;
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 40px;
+        }
 
-.hero{
-background:
-radial-gradient(circle at top right,#dbeafe 0%,transparent 35%),
-radial-gradient(circle at bottom left,#f3f4f6 0%,transparent 40%);
-}
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-bottom: 40px;
+        }
 
-</style>
+        .btn {
+            padding: 15px 35px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            border-radius: 12px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
 
+        .btn-primary {
+            background: var(--neon-pink);
+            color: #fff;
+            box-shadow: 0 0 20px rgba(255, 0, 127, 0.4);
+        }
+
+        .btn-primary:hover {
+            background: #e60073;
+            transform: translateY(-3px);
+            box-shadow: 0 0 30px rgba(255, 0, 127, 0.7);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--text-color);
+            border: 2px solid var(--neon-yellow);
+        }
+
+        .btn-secondary:hover {
+            background: var(--neon-yellow);
+            color: #000;
+            transform: translateY(-3px);
+        }
+
+        /* Contract Box */
+        .contract-box {
+            background: var(--card-bg);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 15px 25px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            max-width: 500px;
+            width: 100%;
+        }
+
+        .contract-box span {
+            color: var(--text-muted);
+            font-family: monospace;
+            font-size: 0.9rem;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        .copy-btn {
+            background: none;
+            border: none;
+            color: var(--neon-yellow);
+            cursor: pointer;
+            font-size: 1.1rem;
+            transition: transform 0.2s;
+        }
+
+        .copy-btn:hover {
+            transform: scale(1.2);
+        }
+
+        /* About Section */
+        .section {
+            padding: 100px 10%;
+        }
+
+        .section-title {
+            text-align: center;
+            font-family: 'Permanent Marker', cursive;
+            font-size: 3rem;
+            color: var(--neon-yellow);
+            margin-bottom: 60px;
+            text-shadow: 2px 2px var(--neon-pink);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 40px 30px;
+            text-align: center;
+            transition: transform 0.3s, border-color 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            border-color: var(--neon-pink);
+        }
+
+        .card i {
+            font-size: 3rem;
+            color: var(--neon-yellow);
+            margin-bottom: 20px;
+        }
+
+        .card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        .card p {
+            color: var(--text-muted);
+            line-height: 1.5;
+        }
+
+        /* Tokenomics */
+        .tokenomics-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .tokenomics-card {
+            background: linear-gradient(135deg, #14141d, #1f142e);
+            border: 2px dashed var(--neon-purple);
+            border-radius: 16px;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .tokenomics-card h4 {
+            color: var(--text-muted);
+            font-size: 1rem;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+
+        .tokenomics-card .stat {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--neon-yellow);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 50px 20px;
+            background: #07070a;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            color: var(--text-muted);
+        }
+
+        .socials {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin-bottom: 20px;
+        }
+
+        .socials a {
+            color: var(--text-color);
+            font-size: 1.5rem;
+            transition: color 0.3s, transform 0.3s;
+        }
+
+        .socials a:hover {
+            color: var(--neon-yellow);
+            transform: scale(1.2);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+        }
+    </style>
 </head>
-
-<body class="text-slate-900">
-
-<!-- =========================
-Navigation
-========================= -->
-
-<nav class="fixed top-0 w-full z-50 glass border-b border-gray-200">
-
-<div class="max-w-7xl mx-auto px-6">
-
-<div class="flex justify-between items-center h-20">
-
-<a href="/"
-class="flex items-center gap-3">
-
-<img
-src="../logo_with_black_BG-removebg-preview.png"
-class="h-12">
-
-<div>
-
-<h1 class="text-2xl font-bold">
-
-Powerful
-
-</h1>
-
-<p class="uppercase tracking-[0.25em] text-xs text-gray-500">
-
-Independent Publication
-
-</p>
-
-</div>
-
-</a>
-
-<div class="hidden md:flex items-center gap-8">
-
-<a href="/"
-class="text-gray-600 hover:text-black">
-
-Home
-
-</a>
-
-<a href="/publications/"
-class="text-gray-600 hover:text-black">
-
-Publications
-
-</a>
-
-<a href="/categories/"
-class="text-gray-600 hover:text-black">
-
-Categories
-
-</a>
-
-<a href="/about/"
-class="font-semibold">
-
-About
-
-</a>
-
-<a href="/contact/"
-class="text-gray-600 hover:text-black">
-
-Contact
-
-</a>
-
-</div>
-
-<a href="/newsletter/"
-class="hidden md:flex bg-black text-white px-5 py-3 rounded-lg font-semibold">
-
-Subscribe
-
-</a>
-
-</div>
-
-</div>
-
-</nav>
-
-<!-- =========================
-Hero
-========================= -->
-
-<section class="hero pt-40 pb-24">
-
-<div class="max-w-5xl mx-auto px-6">
-
-<p class="uppercase tracking-[0.35em] text-sm text-gray-500 mb-6">
-
-About Powerful
-
-</p>
-
-<h1 class="text-5xl md:text-7xl font-extrabold leading-tight">
-
-Understanding
-
-<span class="block">
-
-DeFi & Decentralized
-
-</span>
-
-<span class="block">
-
-Financial Systems
-
-</span>
-
-</h1>
-
-<p class="text-xl text-gray-600 mt-8 leading-9 max-w-3xl">
-
-Powerful is an independent publication dedicated
-to researching DeFi, lending and borrowing, staking,
-tokenization & RWA, NFTs, DEXs,
-stablecoins, yield farming and market pulse.
-
-Rather than chasing headlines,
-we investigate the protocols,
-smart contracts and economic incentives behind them.
-
-</p>
-
-</div>
-
-  </section>
-
-
-
-
-
-  <!-- ==========================================
-MISSION
-========================================== -->
-
-<section class="py-24 bg-white">
-
-<div class="max-w-5xl mx-auto px-6">
-
-<div class="mb-20">
-
-<p class="uppercase tracking-[0.35em] text-sm text-gray-500 mb-4">
-
-Our Mission
-
-</p>
-
-<h2 class="text-4xl md:text-5xl font-bold mb-8">
-
-To understand the protocols
-behind decentralized finance.
-
-</h2>
-
-<p class="text-lg text-gray-600 leading-9">
-
-Powerful exists to explore the forces that shape
-decentralized ecosystems.
-
-We examine lending markets, staking mechanisms, real world assets,
-DEX liquidity, stablecoins, yield strategies,
-and market trends through
-research, data, and critical analysis.
-
-Our goal is simple:
-
-Help readers understand not only
-how protocols function—but why they matter.
-
-</p>
-
-</div>
-
-</div>
-
-</section>
-
-
-
-
-
-<!-- ==========================================
-WHAT WE COVER
-========================================== -->
-
-<section class="py-24 bg-gray-50">
-
-<div class="max-w-7xl mx-auto px-6">
-
-<div class="text-center mb-16">
-
-<p class="uppercase tracking-[0.35em] text-sm text-gray-500">
-
-Research Areas
-
-</p>
-
-<h2 class="text-4xl font-bold mt-4">
-
-What We Cover
-
-</h2>
-
-<p class="text-gray-600 mt-5 max-w-3xl mx-auto text-lg">
-
-DeFi expresses financial power across many verticals.
-Our research follows the decentralized systems
-that influence liquidity, markets, and web3 infrastructure.
-
-</p>
-
-</div>
-
-<div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-
-<div class="bg-white rounded-2xl p-8 shadow-sm">
-
-<h3 class="font-bold text-xl mb-4">
-
-Lending and Borrowing
-
-</h3>
-
-<p class="text-gray-600 leading-7">
-
-Overcollateralized protocols,
-flash loans,
-liquidation mechanics,
-interest rate algorithms,
-and credit markets.
-
-</p>
-
-</div>
-
-<div class="bg-white rounded-2xl p-8 shadow-sm">
-
-<h3 class="font-bold text-xl mb-4">
-
-Staking
-
-</h3>
-
-<p class="text-gray-600 leading-7">
-
-Proof-of-Stake consensus,
-liquid staking derivatives,
-restaking protocols,
-and validator rewards.
-
-</p>
-
-</div>
-
-<div class="bg-white rounded-2xl p-8 shadow-sm">
-
-<h3 class="font-bold text-xl mb-4">
-
-Tokenization & RWA (Real World Assets)
-
-</h3>
-
-<p class="text-gray-600 leading-7">
-
-On-chain treasury bills,
-tokenized real estate,
-private credit,
-and institutional DeFi.
-
-</p>
-
-</div>
-
-<div class="bg-white rounded-2xl p-8 shadow-sm">
-
-<h3 class="font-bold text-xl mb-4">
-
-NFTs (Non-Fungible Tokens)
-
-</h3>
-
-<p class="text-gray-600 leading-7">
-
-Digital assets,
-NFT liquidity pools,
-fractionalization,
-and NFT-fi lending solutions.
-
-</p>
-
-</div>
-
-<div class="bg-white rounded-2xl p-8 shadow-sm">
-
-<h3 class="font-bold text-xl mb-4">
-
-DEXs (Decentralized Exchanges)
-
-</h3>
-
-<p class="text-gray-600 leading-7">
-
-Automated Market Makers,
-concentrated liquidity,
-orderbook DEXs,
-and MEV protection.
-
-</p>
-
-</div>
-
-<div class="bg-white rounded-2xl p-8 shadow-sm">
-
-<h3 class="font-bold text-xl mb-4">
-
-Stablecoins
-
-</h3>
-
-<p class="text-gray-600 leading-7">
-
-Fiat-collateralized,
-crypto-backed,
-algorithmic stablecoins,
-and peg stability mechanics.
-
-</p>
-
-</div>
-
-<div class="bg-white rounded-2xl p-8 shadow-sm">
-
-<h3 class="font-bold text-xl mb-4">
-
-Yield Farming
-
-</h3>
-
-<p class="text-gray-600 leading-7">
-
-Liquidity mining,
-vault strategies,
-impermanent loss risk,
-and reward tokenomics.
-
-</p>
-
-</div>
-
-<div class="bg-white rounded-2xl p-8 shadow-sm">
-
-<h3 class="font-bold text-xl mb-4">
-
-The Market Pulse
-
-</h3>
-
-<p class="text-gray-600 leading-7">
-
-Macro market trends,
-Total Value Locked (TVL),
-protocol revenue metrics,
-and market sentiment.
-
-</p>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-
-
-
-
-<!-- ==========================================
-EDITORIAL PRINCIPLES
-========================================== -->
-
-<section class="py-24 bg-white">
-
-<div class="max-w-5xl mx-auto px-6">
-
-<p class="uppercase tracking-[0.35em] text-sm text-gray-500 mb-4">
-
-Editorial Principles
-
-</p>
-
-<h2 class="text-4xl font-bold mb-10">
-
-How We Approach Every Publication
-
-</h2>
-
-<div class="grid md:grid-cols-2 gap-10">
-
-<div>
-
-<h3 class="font-semibold text-xl mb-4">
-
-Independent Thinking
-
-</h3>
-
-<p class="text-gray-600 leading-8">
-
-We examine protocols on their own merits,
-question assumptions,
-and avoid treating popular hype
-as evidence.
-
-</p>
-
-</div>
-
-<div>
-
-<h3 class="font-semibold text-xl mb-4">
-
-Research First
-
-</h3>
-
-<p class="text-gray-600 leading-8">
-
-We value code,
-on-chain data
-and careful risk analysis
-over sensationalism.
-
-</p>
-
-</div>
-
-<div>
-
-<h3 class="font-semibold text-xl mb-4">
-
-Multiple Perspectives
-
-</h3>
-
-<p class="text-gray-600 leading-8">
-
-Complex DeFi architecture rarely has
-simple explanations.
-We aim to explore competing designs
-fairly and thoughtfully.
-
-</p>
-
-</div>
-
-<div>
-
-<h3 class="font-semibold text-xl mb-4">
-
-Long-Term Value
-
-</h3>
-
-<p class="text-gray-600 leading-8">
-
-Our work is designed to remain useful
-long after current market cycles
-have passed.
-
-</p>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- ==========================================
-LOOKING AHEAD
-========================================== -->
-
-<section class="py-24 bg-gray-50">
-
-<div class="max-w-5xl mx-auto px-6 text-center">
-
-<p class="uppercase tracking-[0.35em] text-sm text-gray-500 mb-4">
-
-Looking Ahead
-
-</p>
-
-<h2 class="text-4xl md:text-5xl font-bold mb-8">
-
-Building a Library of Ideas
-
-</h2>
-
-<p class="text-lg text-gray-600 leading-9 max-w-3xl mx-auto">
-
-Powerful is more than a news publication.
-
-Our ambition is to build a permanent library of research,
-essays, investigations and analysis that remain valuable
-long after today's headlines have passed.
-
-Whether exploring lending markets, liquid staking,
-DEX infrastructure or human behavior in markets,
-our commitment is to publish work that helps readers think
-more clearly about the world around them.
-
-</p>
-
-</div>
-
-</section>
-
-
-
-
-
-<!-- ==========================================
-NEWSLETTER
-========================================== -->
-
-<section class="py-24 bg-white">
-
-<div class="max-w-4xl mx-auto px-6 text-center">
-
-<p class="uppercase tracking-[0.35em] text-sm text-gray-500 mb-4">
-
-Newsletter
-
-</p>
-
-<h2 class="text-4xl md:text-5xl font-bold mb-6">
-
-Join the Readers
-
-</h2>
-
-<p class="text-lg text-gray-600 max-w-2xl mx-auto leading-8 mb-10">
-
-Receive new publications,
-research essays and featured analysis
-directly in your inbox.
-
-</p>
-
-<form class="flex flex-col md:flex-row gap-4 justify-center">
-
-<input
-type="email"
-placeholder="Email address"
-class="flex-1 max-w-xl border border-gray-300 rounded-xl px-5 py-4 focus:outline-none focus:ring-2 focus:ring-black">
-
-<button
-class="bg-black text-white px-8 py-4 rounded-xl font-semibold hover:bg-gray-800 transition">
-
-Subscribe
-
-</button>
-
-</form>
-
-</div>
-
-</section>
-
-
-
-
-
-<!-- ==========================================
-FOOTER
-========================================== -->
-
-<footer class="bg-black text-white py-20">
-
-<div class="max-w-7xl mx-auto px-6">
-
-<div class="grid md:grid-cols-4 gap-12">
-
-<div>
-
-<h3 class="text-3xl font-bold mb-4">
-
-Powerful
-
-</h3>
-
-<p class="text-gray-400 leading-7">
-
-Independent research and analysis
-exploring the forces that shape DeFi,
-lending, staking, tokenization,
-NFTs, DEXs, stablecoins, yield, and market trends.
-
-</p>
-
-</div>
-
-<div>
-
-<h4 class="font-semibold mb-5">
-
-Explore
-
-</h4>
-
-<ul class="space-y-3 text-gray-400">
-
-<li><a href="/">Home</a></li>
-
-<li><a href="/about/">About</a></li>
-
-<li><a href="/publications/">Publications</a></li>
-
-<li><a href="/categories/">Categories</a></li>
-
-<li><a href="/contact/">Contact</a></li>
-
-</ul>
-
-</div>
-
-<div>
-
-<h4 class="font-semibold mb-5">
-
-Research
-
-</h4>
-
-<ul class="space-y-3 text-gray-400">
-
-<li><a href="/lending/">Lending and Borrowing</a></li>
-
-<li><a href="/staking/">Staking</a></li>
-
-<li><a href="/rwa/">Tokenization & RWA</a></li>
-
-<li><a href="/nfts/">NFTs</a></li>
-
-<li><a href="/dexs/">DEXs</a></li>
-
-<li><a href="/stablecoins/">Stablecoins</a></li>
-
-</ul>
-
-</div>
-
-<div>
-
-<h4 class="font-semibold mb-5">
-
-Follow
-
-</h4>
-
-<ul class="space-y-3 text-gray-400">
-
-<li>
-
-<a href="https://x.com/powerful_ng" target="_blank">
-
-X (Twitter)
-
-</a>
-
-</li>
-
-<li>
-
-<a href="/privacy/">
-
-Privacy Policy
-
-</a>
-
-</li>
-
-</ul>
-
-</div>
-
-</div>
-
-<hr class="border-gray-800 my-12">
-
-<div class="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-500">
-
-<p>
-
-© 2026 Powerful. All rights reserved.
-
-</p>
-
-<p>
-
-Understanding the forces that shape the world.
-
-</p>
-
-</div>
-
-</div>
-
-</footer>
-
-
-
-
-
-<script>
-
-lucide.createIcons();
-
-</script>
-
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="logo">$STUPID</div>
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#tokenomics">Tokenomics</a></li>
+            <li><a href="#how-to-buy">How to Buy</a></li>
+        </ul>
+        <a href="#buy" class="btn-buy-nav">Ape In</a>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>STUPID</h1>
+        <p class="tagline">Financial Freedom (Probably Not)</p>
+        <p class="desc">The ultimate self-aware memecoin for everyone who has ever aped into a chaotic chart, ignored all risk management, and just trusted the absolute vibe.</p>
+        
+        <div class="cta-buttons">
+            <a href="#" class="btn btn-primary">Buy $STUPID</a>
+            <a href="https://t.me" target="_blank" class="btn btn-secondary"><i class="fab fa-telegram-plane"></i> Telegram</a>
+        </div>
+
+        <!-- Contract Address Box -->
+        <div class="contract-box">
+            <span id="ca-text">ComingSoonContractAddress11111111111111</span>
+            <button class="copy-btn" onclick="copyCA()" title="Copy Contract Address"><i class="fas fa-copy"></i></button>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <h2 class="section-title">Why Be Smart?</h2>
+        <div class="about-grid">
+            <div class="card">
+                <i class="fas fa-brain"></i>
+                <h3>Zero Utility</h3>
+                <p>No bloated roadmaps, no fake utility promises. Just pure, unfiltered meme energy fueled by absolute chaos.</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-question-circle"></i>
+                <h3>Complete Honesty</h3>
+                <p>We tell it like it is. You might reach the moon, or you might lose it all. Financial freedom? Probably not.</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-users"></i>
+                <h3>Degen Community</h3>
+                <p>Built for the chronically online traders who love the game more than the gains. Welcome home, degens.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tokenomics Section -->
+    <section id="tokenomics" class="section">
+        <h2 class="section-title">Tokenomics</h2>
+        <div class="tokenomics-container">
+            <div class="tokenomics-card">
+                <h4>Tax</h4>
+                <div class="stat">0% / 0%</div>
+            </div>
+            <div class="tokenomics-card">
+                <h4>Liquidity</h4>
+                <div class="stat">Burnt 🔥</div>
+            </div>
+            <div class="tokenomics-card">
+                <h4>Supply</h4>
+                <div class="stat">1,000,000,000</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="socials">
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-telegram"></i></a>
+            <a href="#"><i class="fas fa-chart-line"></i></a>
+        </div>
+        <p>&copy; 2026 STUPID ($STUPID). All rights reserved. Memes only, not financial advice.</p>
+    </footer>
+
+    <script>
+        function copyCA() {
+            const caText = document.getElementById('ca-text').innerText;
+            navigator.clipboard.writeText(caText).then(() => {
+                alert('Contract Address Copied to Clipboard!');
+            });
+        }
+    </script>
 </body>
-
 </html>
